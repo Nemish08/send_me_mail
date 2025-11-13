@@ -1,0 +1,20 @@
+{
+  "name": "send_me_mail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@openai/agents": "^0.3.0",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "nodemailer": "^7.0.10",
+    "zod": "^3.25.76"
+  }
+}
