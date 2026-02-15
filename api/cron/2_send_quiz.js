@@ -1,7 +1,17 @@
 import { sendEmail } from '../../src/utils/email.js';
 import { Memory } from '../../src/utils/memory.js';
+import { config } from '../../src/config.js';
 
 export default async function handler(req, res) {
+  // --- SECURITY CHECK ---
+  const authHeader = req.headers.authorization;
+  const querySecret = req.query.secret;
+  
+  if (querySecret !== config.cronSecret && authHeader !== `Bearer ${config.cronSecret}`) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  // ----------------------
+
   try {
     const today = new Date().toISOString().split('T')[0];
     
@@ -13,7 +23,6 @@ export default async function handler(req, res) {
     }
 
     // 2. Format Quiz HTML
-    // We create a specific subject line we can track later
     const subject = `🧠 Daily Quiz Challenge [${today}]`;
     
     let quizHtml = `
