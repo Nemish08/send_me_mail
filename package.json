@@ -1,20 +1,19 @@
 {
-  "name": "send_me_mail",
+  "name": "tech-news-automation",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
+  "scripts": {
+    "start": "node api/index.js"
+  },
   "dependencies": {
-    "@openai/agents": "^0.3.0",
-    "axios": "^1.13.2",
-    "dotenv": "^17.2.3",
-    "nodemailer": "^7.0.10",
-    "zod": "^3.25.76"
+    "@vercel/kv": "^1.0.1",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.4",
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.6.9",
+    "nodemailer": "^6.9.9",
+    "openai": "^4.28.0",
+    "zod": "^3.22.4"
   }
 }

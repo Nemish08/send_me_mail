@@ -1,8 +1,21 @@
 {
   "crons": [
     {
-      "path": "/api/sendEmail",
+      "path": "/api/cron/1_generate_news",
       "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/2_send_quiz",
+      "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/cron/3_grade_reply",
+      "schedule": "0 * * * *"
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 60
+    }
+  }
 }
