@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     }
 
     // 2. Format Quiz HTML
-    const subject = `🧠 Daily Quiz Challenge [${today}]`;
+    const subject = `Daily Quiz Challenge [${today}]`;
     
     let quizHtml = `
       <body style="background:#1e1e1e; color:#00ff00; font-family: 'Courier New', monospace; padding:20px;">
